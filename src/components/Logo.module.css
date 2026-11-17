@@ -1,0 +1,41 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  color: #fff;
+}
+
+.the {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.brick {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: -0.05em 0 0.15em;
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+}
+
+.lg .the {
+  font-size: 0.9rem;
+}
+.lg .brick {
+  font-size: 2.4rem;
+}
+.lg .sub {
+  font-size: 0.6rem;
+}

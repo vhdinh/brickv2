@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+.DS_Store
+
+# full-size masters kept by `npm run images`
+image-originals/

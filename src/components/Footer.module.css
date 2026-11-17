@@ -1,0 +1,43 @@
+.footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.88);
+  padding-top: 3.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.brand p {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  max-width: 26ch;
+  opacity: 0.8;
+}
+
+.links {
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  align-content: start;
+}
+
+.links a:hover {
+  color: #e9a587;
+}
+
+.legal {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.72rem;
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1.2fr 0.8fr 1.2fr;
+  }
+}
