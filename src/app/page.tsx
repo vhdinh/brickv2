@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactDetails from "@/components/ContactDetails";
 import { ChevronIcon } from "@/components/icons";
+import { site } from "@/data/site";
 import styles from "./page.module.css";
 
 const features = [
@@ -61,8 +62,9 @@ export default function Home() {
             </span>
           </h1>
           <p className={styles.lede}>
-            A neighborhood kitchen and lounge serving comforting food, thoughtfully crafted
-            cocktails, and nights worth staying a little longer.
+            A neighborhood Asian fusion kitchen and lounge in the Renton Highlands, serving
+            comforting food, thoughtfully crafted cocktails, and nights worth staying a little
+            longer.
           </p>
           <Link href="/menu" className="btn">
             View Menu
@@ -97,7 +99,17 @@ export default function Home() {
         ))}
       </section>
 
-      <section className={`container ${styles.info}`} aria-label="Visit us">
+      <section id="visit" className={`container ${styles.info}`} aria-labelledby="visit-h">
+        <div className={styles.visitIntro}>
+          <h2 id="visit-h" className={styles.visitTitle}>
+            Visit us in the Renton Highlands
+          </h2>
+          <ul className={styles.directions}>
+            {site.directions.map((d) => (
+              <li key={d}>{d}</li>
+            ))}
+          </ul>
+        </div>
         <ContactDetails layout="row" />
       </section>
     </>

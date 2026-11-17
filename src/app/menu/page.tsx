@@ -1,19 +1,30 @@
-import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import MenuList from "@/components/MenuList";
 import { foodMenu } from "@/data/menu";
+import { JsonLd, breadcrumbJsonLd, menuJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Menu",
-  description: "Starters, mains, salads and desserts at The Brick Kitchen + Lounge.",
-};
+const description =
+  "The Brick's Asian fusion food menu in the Renton Highlands: smash burgers, garlic noodles, garlic chicken bao, bulgogi cheesesteak, panang curry salmon, crab rangoon tacos, wings and desserts.";
+
+export const metadata = pageMetadata({
+  title: "Food Menu in Renton, WA",
+  description,
+  path: "/menu",
+});
 
 export default function MenuPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          menuJsonLd({ name: "Food Menu", path: "/menu", description, sections: foodMenu }),
+          breadcrumbJsonLd("Menu", "/menu"),
+        ]}
+      />
       <PageHero
         eyebrow={["Fresh Ingredients", "Bold Flavors"]}
         title="Our Menu"
+        subtitle="Asian fusion comfort food, made fresh in the Renton Highlands."
         image="/images/ShrimpPoBoy.jpg"
       />
       <MenuList sections={foodMenu} />

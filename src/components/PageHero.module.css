@@ -1,15 +1,22 @@
+/*
+ * Mobile: the hero isn't shown. It stays in the page as a visually hidden block so the
+ * page's <h1> is still read by screen readers and search engines, and the photo is
+ * display:none so phones never download it.
+ */
 .hero {
-  position: relative;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
-  background: var(--ink);
-  color: #fff;
-  min-height: 300px;
-  display: flex;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .media {
-  position: absolute;
-  inset: 0;
+  display: none;
 }
 
 .media img {
@@ -27,13 +34,6 @@
     rgba(36, 26, 21, 0.35) 55%,
     rgba(36, 26, 21, 0.15) 100%
   );
-}
-
-.mobileOnly {
-  display: block;
-}
-.desktopOnly {
-  display: none;
 }
 
 .content {
@@ -70,15 +70,24 @@
 
 @media (min-width: 768px) {
   .hero {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    clip: auto;
+    white-space: normal;
+    background: var(--ink);
+    color: #fff;
     min-height: 300px;
+    display: flex;
     align-items: center;
   }
 
-  .mobileOnly {
-    display: none;
-  }
-  .desktopOnly {
+  .media {
     display: block;
+    position: absolute;
+    inset: 0;
   }
 
   .photo .media {

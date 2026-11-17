@@ -7,8 +7,6 @@ type Props = {
   subtitle?: string;
   italicSubtitle?: boolean;
   image: string;
-  /** Optional different image for small screens (e.g. Happy Hour sliders). */
-  mobileImage?: string;
   /** "photo" = image fades in from the right; "ambient" = full-bleed background. */
   variant?: "photo" | "ambient";
 };
@@ -19,19 +17,22 @@ export default function PageHero({
   subtitle,
   italicSubtitle,
   image,
-  mobileImage,
   variant = "photo",
 }: Props) {
   return (
     <section className={`${styles.hero} ${styles[variant]}`}>
-      <div className={`${styles.media} ${mobileImage ? styles.desktopOnly : ""}`}>
-        <Image src={image} alt="" fill priority sizes="(min-width: 768px) 60vw, 100vw" />
+      <div className={styles.media}>
+        {/* Lazy + high priority: loads right away on desktop, but never on mobile,
+            where the hero is hidden (browsers skip lazy images that aren't rendered). */}
+        <Image
+          src={image}
+          alt=""
+          fill
+          loading="lazy"
+          fetchPriority="high"
+          sizes={variant === "photo" ? "(min-width: 768px) 62vw, 1px" : "(min-width: 768px) 100vw, 1px"}
+        />
       </div>
-      {mobileImage && (
-        <div className={`${styles.media} ${styles.mobileOnly}`}>
-          <Image src={mobileImage} alt="" fill priority sizes="100vw" />
-        </div>
-      )}
       <div className={`container ${styles.content}`}>
         {eyebrow && (
           <p className={`eyebrow ${styles.eyebrow}`}>

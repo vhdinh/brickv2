@@ -11,6 +11,15 @@
   max-width: 520px;
 }
 
+/* Mobile-only page title (the hero with the real <h1> is hidden on phones) */
+.when_hh {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 1.1rem;
+}
+
 .when {
   padding-left: 1.1rem;
   border-left: 2px solid var(--brick);
@@ -71,6 +80,10 @@
 }
 
 @media (min-width: 768px) {
+  .when_hh {
+    display: none;
+  }
+
   .layout {
     display: grid;
     grid-template-columns: 1fr 1fr;

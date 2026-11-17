@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
+import { JsonLd, breadcrumbJsonLd, menuJsonLd, pageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Happy Hour",
-  description: "Happy hour Monday–Friday, 3–6 PM at The Brick Kitchen + Lounge.",
-};
+const description =
+  "Happy hour in Renton, WA every Monday–Friday, 3–6 PM: $4 beers, $8 house wine, $9 wells, $3 off signature cocktails, plus deals on wings, bao, tacos and furikake fries at The Brick.";
+
+export const metadata = pageMetadata({
+  title: "Happy Hour Mon–Fri 3–6 PM",
+  description,
+  path: "/happy-hour",
+});
 
 const specials = [
   {
@@ -39,13 +43,29 @@ const specials = [
 export default function HappyHourPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          menuJsonLd({
+            name: "Happy Hour Menu",
+            path: "/happy-hour",
+            description: "Available Monday–Friday, 3:00–6:00 PM.",
+            // Only real items (price, name, description); "$3 off …"-style lines are skipped.
+            sections: specials.map((g) => ({
+              title: g.title,
+              items: g.items
+                .filter((i) => i.length === 3)
+                .map(([price, name, desc]) => ({ name, price, description: desc ?? "" })),
+            })),
+          }),
+          breadcrumbJsonLd("Happy Hour", "/happy-hour"),
+        ]}
+      />
       <PageHero
         variant="ambient"
         eyebrow={["Good Drinks", "Good Food", "Good Times"]}
         title="Happy Hour"
         subtitle="Great food, cold drinks, and good company. Because happy hour is always a good idea."
         image="/images/brick_happyhour.jpg"
-        mobileImage="/images/DrinksSpread.jpg"
       />
 
       <section className={`container ${styles.layout}`}>
@@ -59,6 +79,10 @@ export default function HappyHourPage() {
         </div>
 
         <div className={styles.details}>
+          {/* Visual title for phones only; aria-hidden because the hidden hero <h1> already says it */}
+          <p className={styles.when_hh} aria-hidden="true">
+            Happy Hour
+          </p>
           <p className={styles.when}>
             Monday – Friday
             <br />

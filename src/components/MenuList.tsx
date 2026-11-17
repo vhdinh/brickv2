@@ -79,9 +79,9 @@ export default function MenuList({ sections }: { sections: Section[] }) {
             <h2 id={`${s.id}-h`} className={styles.sectionTitle}>
               {s.title}
             </h2>
-            {s.description && <h3 id={`${s.id}-d`} className={styles.sectionDescription}>
+            {s.description && <p id={`${s.id}-d`} className={styles.sectionDescription}>
               {s.description}
-            </h3>}
+            </p>}
             <ul className={styles.list}>
               {s.items.map((item) => (
                 <li key={item.name} className={`${styles.item} ${item.image ? "" : styles.noImage}`}>

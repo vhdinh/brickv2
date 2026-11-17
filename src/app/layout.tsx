@@ -10,14 +10,41 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { site } from "@/data/site";
+import { JsonLd, siteJsonLd } from "@/lib/seo";
+
+const homeTitle = `${site.name} | Asian Fusion in Renton, WA`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Renton, WA`,
-    template: `%s | ${site.shortName}`,
+    default: homeTitle,
+    template: `%s | ${site.name}`,
   },
-  description:
-    "A neighborhood kitchen and lounge in Renton, WA serving comforting food, thoughtfully crafted cocktails, and good company.",
+  description: site.description,
+  applicationName: site.name,
+  category: "restaurant",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: site.name,
+    url: "/",
+    title: homeTitle,
+    description: site.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: site.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  formatDetection: { telephone: false, address: false, email: false },
+  // Add these once the site is live, after verifying it in each tool:
+  // verification: { google: "…", other: { "msvalidate.01": "…" } },
 };
 
 export const viewport: Viewport = {
@@ -28,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <JsonLd data={siteJsonLd()} />
         <Header />
         <main>{children}</main>
         <Footer />
