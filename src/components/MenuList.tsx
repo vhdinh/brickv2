@@ -106,10 +106,10 @@ export default function MenuList({ sections }: { sections: Section[] }) {
             </ul>
           </section>
         ))}
-        <p>
+        <p className={styles.desc}>
           *Consuming raw or undercooked meats, poultry, seafood, or eggs may increase your risk of food borne illness, especially if you have certain medical conditions.
         </p>
-        <p>* Gratuity of 20% will be added to all parties of 6 or more
+        <p className={styles.desc}>* Gratuity of 20% will be added to all parties of 6 or more
         </p>
       </div>
     </div>

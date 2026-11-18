@@ -77,7 +77,7 @@ export const foodMenu: Section[] = [
         name: "Honey Soy Salmon Salad",
         description: "grilled salmon glazed in house honey soy, mixed greens, edamame, radish, avocado, tomatoes, & pickled onions served with a miso marinaded salmon, tossed in house soy ginger vinaigrette",
         price: "$22",
-        // image: "/images/calamari.jpg",
+        image: "/images/MisoSalmonSalad.jpg",
       },
       {
         name: "Grilled Miso Caesar Salad",
@@ -97,7 +97,7 @@ export const foodMenu: Section[] = [
         name: "Crispy Chicken Slaw",
         description: "cabbage, carrots, mandarin oranges, red onion, tomato, cilantro, sliced almonds, fried onions, fried chicken, tossed in an Asian sweet and savory dressing",
         price: "$17",
-        // image: "/images/calamari.jpg",
+        image: "/images/CrispyChickenSlaw.jpg",
       },
     ],
   },
@@ -122,11 +122,13 @@ export const foodMenu: Section[] = [
         name: "Bulgogi Smash Burger",
         description: "seasoned beef patty topped with bulgogi marinated beef, provolone cheese, Korean pickled radish, lettuce, green onion, sesame, coleslaw, gochujang aioli, brioche bun",
         price: "$15",
+        image: "/images/BulgogiSmash.jpg"
       },
       {
         name: "Thai Sausage Burger",
         description: "¼oz Thai beef sausage burger, namprik mayo, cucumber, lettuce, red onions, cilantro, and house peanut sauce",
         price: "$15",
+        image: "/images/ThaiSausageBurger.jpg"
       },
     ],
   },
@@ -139,6 +141,7 @@ export const foodMenu: Section[] = [
         name: "Honey Soy Salmon Sandwich**",
         description: "grilled salmon fillet, sriracha aioli, cabbage, carrots & green onion slaw, avocado, brioche bun, served with waffle fries",
         price: "$20",
+        image: "/images/MisoSalmonSandwich.jpg",
       },
       {
         name: "Shrimp Po'Boy",
@@ -162,11 +165,13 @@ export const foodMenu: Section[] = [
         name: "Lemongrass Tofu Sandwich",
         description: "fried tofu marinaded in lemongrass and coconut milk, peanut sauce, lettuce, tomato, red onion, avocado, chimichurri, on a vegan brioche bun served with waffle fries",
         price: "$18",
+        image: "/images/LemongrassTofuSandwich.jpg"
       },
       {
         name: "Chicken Miso Caesar Wrap",
         description: "romaine, spring lettuce mix, pickled onion, crouton crumbles, and fried garlic tossed in miso cesar dressing with your choice of fried or grilled chicken, wrapped in a spinach tortilla, served with shoestring fries",
         price: "$18",
+        image: "/images/ChickenMisoCaesarWrap.jpg"
       },
     ],
   },
@@ -222,7 +227,7 @@ export const foodMenu: Section[] = [
         name: "Cheesecake cloud",
         description: "Classic cheesecake on a graham cracker crust, passion fruit curd, chocolate cookie crumbles, and fresh fruit",
         price: "$15",
-        image: "/images/CheesecakeCloud.jpg",
+        image: "/images/CheesecakeCloud.jpeg",
       },
       {
         name: "Tiramisu",
@@ -240,6 +245,7 @@ export const foodMenu: Section[] = [
         name: "Mango Mochi Cake",
         description: "A soft, chewy mochi cake infused with ripe mango, offering a lightly sweet, tropical flavor and a satisfyingly bouncy texture",
         price: "$15",
+        image: "/images/MangoMochiCake.jpg"
       },
     ],
   },
