@@ -59,7 +59,7 @@ export const site = {
 
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/menu", label: "Menu" },
-  { href: "/drinks", label: "Drink" },
+  { href: "/food", label: "Food" },
+  { href: "/drinks", label: "Drinks" },
   { href: "/happy-hour", label: "Happy Hour" },
 ];
