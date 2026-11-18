@@ -10,16 +10,16 @@ export default function Footer() {
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <Logo />
-          <p>A neighborhood kitchen and lounge in Renton, WA.</p>
+          {/* <p>A neighborhood kitchen and lounge in Renton, WA.</p> */}
         </div>
-        <nav className={styles.links} aria-label="Footer">
+        {/* <nav className={styles.links} aria-label="Footer">
           {navLinks.map((l) => (
             <Link key={l.href} href={l.href}>
               {l.label}
             </Link>
           ))}
           <a href={site.orderUrl}>Order Online</a>
-        </nav>
+        </nav> */}
         <ContactDetails />
       </div>
       <div className={`container ${styles.legal}`}>

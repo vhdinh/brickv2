@@ -111,7 +111,7 @@
   object-fit: cover;
 }
 
-/* Drink photos: no tile background, show the whole glass, and let white
+/* Drinks photos: no tile background, show the whole glass, and let white
    backgrounds disappear into the page (multiply makes white invisible). */
 .drinks {
   /* aspect-ratio: 1 / 1; */

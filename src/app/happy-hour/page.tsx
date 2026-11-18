@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
 
 const specials = [
   {
-    title: "Drink Specials",
+    title: "Drinks Specials",
     items: [
       ["$4", "Bottles", "Corona, Heineken, Coors Light, White Claw"],
       ["$8", "Wines", "House Cabernet, House Chardonnay"],
@@ -65,7 +65,7 @@ export default function HappyHourPage() {
         eyebrow={["Good Drinks", "Good Food", "Good Times"]}
         title="Happy Hour"
         subtitle="Great food, cold drinks, and good company. Because happy hour is always a good idea."
-        image="/images/brick_happyhour.jpg"
+        image="/images/HHIcon.jpg"
       />
 
       <section className={`container ${styles.layout}`}>

@@ -11,7 +11,7 @@ const features = [
     title: "Food",
     label: "Great Food",
     description: "Fresh ingredients, bold flavors.",
-    image: "/images/brick_food.jpg",
+    image: "/images/FoodIcon.jpg",
   },
   {
     href: "/drinks",
@@ -25,8 +25,17 @@ const features = [
     title: "Happy Hour",
     label: "Happy Hour",
     description: "Great deals on food and drinks.",
-    image: "/images/brick_happyhour.jpg",
-    mobileImage: "/images/brick_happyhour.jpg",
+    image: "/images/HHIcon.jpg",
+    mobileImage: "/images/HHIcon.jpg",
+  },
+
+  {
+    href: "/food#desserts",
+    title: "Desserts",
+    label: "Desserts",
+    description: "Sweet treats worth saving room for",
+    image: "/images/DessertIcon.jpg",
+    mobileImage: "/images/DessertIcon.jpg",
   },
 ];
 
@@ -110,7 +119,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <ContactDetails layout="row" />
+        {/* <ContactDetails layout="row" /> */}
       </section>
     </>
   );

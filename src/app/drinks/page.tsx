@@ -23,7 +23,7 @@ export default function DrinksPage() {
       />
       <PageHero
         eyebrow={["Crafted Cocktails", "Fine Spirits"]}
-        title="Drink"
+        title="Drinks"
         subtitle="Thoughtfully crafted. Always refreshing."
         italicSubtitle
         image="/images/DrinksSpread.jpg"

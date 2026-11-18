@@ -25,7 +25,7 @@ export default function MenuPage() {
         eyebrow={["Fresh Ingredients", "Bold Flavors"]}
         title="Our Menu"
         subtitle="Asian fusion comfort food, made fresh in the Renton Highlands."
-        image="/images/ShrimpPoBoy.jpg"
+        image="/images/FoodIcon.jpg"
       />
       <MenuList sections={foodMenu} />
     </>
