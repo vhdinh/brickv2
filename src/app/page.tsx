@@ -7,15 +7,15 @@ import styles from "./page.module.css";
 
 const features = [
   {
-    href: "/menu",
-    title: "Menu",
+    href: "/food",
+    title: "Food",
     label: "Great Food",
     description: "Fresh ingredients, bold flavors.",
     image: "/images/brick_food.jpg",
   },
   {
     href: "/drinks",
-    title: "Drink",
+    title: "Drinks",
     label: "Crafted Cocktails",
     description: "Crafted cocktails, wine, and more.",
     image: "/images/brick_cocktail.jpg",

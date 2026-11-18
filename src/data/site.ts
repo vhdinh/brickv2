@@ -30,9 +30,9 @@ export const site = {
   /** `days`/`time` are displayed; `dayOfWeek`/`opens`/`closes` (24h) feed Google's structured data. */
   hours: [
     {
-      days: "Mon – Thu",
+      days: "Sun – Thu",
       time: "12:00 PM – 9:00 PM",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
       opens: "12:00",
       closes: "21:00",
     },
@@ -42,13 +42,6 @@ export const site = {
       dayOfWeek: ["Friday", "Saturday"],
       opens: "12:00",
       closes: "22:00",
-    },
-    {
-      days: "Sun",
-      time: "12:00 PM – 9:00 PM",
-      dayOfWeek: ["Sunday"],
-      opens: "12:00",
-      closes: "21:00",
     },
   ],
   happyHour: {
