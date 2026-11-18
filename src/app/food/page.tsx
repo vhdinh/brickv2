@@ -1,6 +1,6 @@
 import PageHero from "@/components/PageHero";
 import MenuList from "@/components/MenuList";
-import { foodMenu } from "@/data/menu";
+import { foodMenu } from "@/data/food";
 import { JsonLd, breadcrumbJsonLd, menuJsonLd, pageMetadata } from "@/lib/seo";
 
 const description =
@@ -9,7 +9,7 @@ const description =
 export const metadata = pageMetadata({
   title: "Food Menu in Renton, WA",
   description,
-  path: "/menu",
+  path: "/food",
 });
 
 export default function MenuPage() {
@@ -17,8 +17,8 @@ export default function MenuPage() {
     <>
       <JsonLd
         data={[
-          menuJsonLd({ name: "Food Menu", path: "/menu", description, sections: foodMenu }),
-          breadcrumbJsonLd("Menu", "/menu"),
+          menuJsonLd({ name: "Food Menu", path: "/food", description, sections: foodMenu }),
+          breadcrumbJsonLd("Food", "/food"),
         ]}
       />
       <PageHero

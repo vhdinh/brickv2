@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/drink", destination: "/drinks", permanent: true },
       { source: "/happyhour", destination: "/happy-hour", permanent: true },
-      { source: "/eat", destination: "/menu", permanent: true },
+      { source: "/eat", destination: "/food", permanent: true },
       { source: "/visit", destination: "/#visit", permanent: true },
       { source: "/cart", destination: "/", permanent: true },
       { source: "/home", destination: "/", permanent: true },

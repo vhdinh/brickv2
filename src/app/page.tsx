@@ -66,7 +66,7 @@ export default function Home() {
             comforting food, thoughtfully crafted cocktails, and nights worth staying a little
             longer.
           </p>
-          <Link href="/menu" className="btn">
+          <Link href="/food" className="btn">
             View Menu
           </Link>
         </div>

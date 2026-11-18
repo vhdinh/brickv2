@@ -90,7 +90,7 @@ export function siteJsonLd() {
           opens: h.opens,
           closes: h.closes,
         })),
-        hasMenu: [absoluteUrl("/menu"), absoluteUrl("/drinks"), absoluteUrl("/happy-hour")],
+        hasMenu: [absoluteUrl("/food"), absoluteUrl("/drinks"), absoluteUrl("/happy-hour")],
         sameAs: [site.instagram, site.facebook, site.yelp],
         potentialAction: {
           "@type": "OrderAction",

@@ -1,0 +1,245 @@
+.bar {
+  position: relative;
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.bar[hidden] {
+  display: none;
+}
+
+/* ---------- Variants ---------- */
+.primary {
+  background: var(--brick);
+  color: #fff;
+}
+
+.event {
+  background: #3a2a21;
+  color: #fff;
+}
+
+.notice {
+  background: var(--sand);
+  color: var(--charcoal);
+}
+
+/* ---------- Layout (mobile first: one compact line) ---------- */
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 40px;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  display: none;
+  flex-shrink: 0;
+  width: 1px;
+  height: 28px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.message {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message strong {
+  font-weight: 600;
+}
+
+.sep,
+.details {
+  display: none;
+}
+
+.sep {
+  margin: 0 0.9rem;
+  opacity: 0.6;
+}
+
+/* ---------- Links ---------- */
+
+/* Phones: every link turns into a "stretched" link covering the whole bar,
+   with its label kept for screen readers only. */
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.linkLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.link:focus-visible {
+  outline: none;
+}
+
+.link:focus-visible::after {
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
+
+/* ---------- Close ---------- */
+.close {
+  position: relative; /* sits above the stretched link */
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: -10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.9;
+  border-left: 1px solid transparent;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Thin rule before the close button, like the mobile mockup */
+.close::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+/* ---------- Tablet / desktop ---------- */
+@media (min-width: 768px) {
+  .bar {
+    font-size: 1rem;
+  }
+
+  .inner {
+    gap: 1.6rem;
+    min-height: 62px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .divider {
+    display: block;
+  }
+
+  .message {
+    white-space: normal;
+  }
+
+  .sep,
+  .details {
+    display: inline;
+  }
+
+  .close {
+    width: 44px;
+    height: 44px;
+  }
+
+  .close::before {
+    display: none;
+  }
+
+  .close svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Real, visible links from here up */
+  .button::after,
+  .inlineLink::after {
+    content: none;
+  }
+
+  .button .linkLabel,
+  .inlineLink .linkLabel {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+  }
+
+  .inlineLink {
+    color: var(--brick);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .primary .inlineLink,
+  .event .inlineLink {
+    color: inherit;
+  }
+
+  .button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0.4rem 1.6rem;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .button:hover {
+    background: #fff;
+    color: #3a2a21;
+  }
+
+  .link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .link:focus-visible::after {
+    outline: none;
+  }
+}
